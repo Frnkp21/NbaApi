@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>NBA Teams</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<h2>NBA Teams</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Abbreviation</th>
+        <th>City</th>
+        <th>Conference</th>
+        <th>Division</th>
+        <th>Full Name</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody th:each="team : ${teams.data}">
+    <tr>
+        <td th:text="${team.id}"></td>
+        <td th:text="${team.abbreviation}"></td>
+        <td th:text="${team.city}"></td>
+        <td th:text="${team.conference}"></td>
+        <td th:text="${team.division}"></td>
+        <td th:text="${team.full_name}"></td>
+        <td th:text="${team.name}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
